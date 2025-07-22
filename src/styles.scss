@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* 
+{
+    font-family: Roboto, sans-serif;
+}
+
+
+:root 
+{
+    --Titre: aqua;
+    --Danger: darkred;
+    --color1: #331b0a;
+    --color2: #5a471e;
+    --color3: #e66631;
+    --color4: #ecb260;
+    --color5: #f4eb9b;
+}
+
+a 
+{
+    color: var(--color3);
+}
+
+a:visited 
+{
+    color: var(--color3);
+}

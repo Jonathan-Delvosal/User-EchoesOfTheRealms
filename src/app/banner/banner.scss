@@ -1,0 +1,17 @@
+
+.banniere{
+    display: flex;
+
+    background-color: var(--color5);
+
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 5px solid var(--color1);
+
+    height: 10eh;
+}
+
+.bannerImg {
+    width: 100px;
+    height: auto;
+}
