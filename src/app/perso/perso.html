@@ -1,7 +1,21 @@
-<br>
-<br>
-<a [routerLink]="['fiche-personnage']">Fiche Personnage</a>;
+<div class="perso">
 
-<a [routerLink]="['inventaire']">inventaire</a>;
+    <div class="perso-container">
+        <br>
+    
+        <a [routerLink]="['fiche-personnage']">Fiche Personnage</a>
+    
+        <br>
+        
+        <a [routerLink]="['inventaire']">inventaire</a>
 
-<router-outlet></router-outlet>
+        <br>
+        
+        <a [routerLink]="['equipement']">Equipement</a>
+    
+    </div>
+
+    <router-outlet></router-outlet>
+
+</div>
+

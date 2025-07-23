@@ -8,6 +8,10 @@ import { Inventaire } from './inventaire/inventaire';
 import { Option } from './option/option';
 import { Statperso } from './statperso/statperso';
 import { Perso } from './perso/perso';
+import { Equipement } from './equipement/equipement';
+import { EquipementAjout } from './equipement-ajout/equipement-ajout';
+import { EquipementRetrait } from './equipement-retrait/equipement-retrait';
+
 
 export const routes: Routes = [
 
@@ -18,6 +22,13 @@ export const routes: Routes = [
         children: [
             {path: 'fiche-personnage', component: FichePersonnage},
             {path: 'inventaire', component: Inventaire},
+            {path: 'equipement', component: Equipement, children: 
+                [
+                    {path: 'equipement-ajout', component: EquipementAjout},
+                    {path: 'equipement-retrait', component: EquipementRetrait},
+                    {path:'', redirectTo: 'equipement', pathMatch: 'full'},
+                ]},
+                
             {path:'', redirectTo: 'perso', pathMatch: 'full'},
         ]
     },
