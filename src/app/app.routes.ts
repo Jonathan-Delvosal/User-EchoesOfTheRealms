@@ -11,11 +11,21 @@ import { Perso } from './perso/perso';
 import { Equipement } from './equipement/equipement';
 import { EquipementAjout } from './equipement-ajout/equipement-ajout';
 import { EquipementRetrait } from './equipement-retrait/equipement-retrait';
+import { Map } from './map/map';
+import { AffichEquip } from './affich-equip/affich-equip';
+import { Chatbox } from './chatbox/chatbox';
 
 
 export const routes: Routes = [
 
-    {path:'monde', component: Monde},
+    {path:'monde', component: Monde, 
+        children: [
+            {path: 'statperso', component: Statperso},
+            {path: "chatbox", component: Chatbox},
+            {path: "map", component: Map},
+            {path: '**', redirectTo: 'monde', pathMatch: 'full'},
+        ]
+    },
 
     {path: 'perso', component: Perso,
 
@@ -26,10 +36,11 @@ export const routes: Routes = [
                 [
                     {path: 'equipement-ajout', component: EquipementAjout},
                     {path: 'equipement-retrait', component: EquipementRetrait},
-                    {path:'', redirectTo: 'equipement', pathMatch: 'full'},
+                    {path: '', component: AffichEquip},
+                    {path:'**', redirectTo: 'equipement', pathMatch: 'full'},
                 ]},
                 
-            {path:'', redirectTo: 'perso', pathMatch: 'full'},
+            {path:'**', redirectTo: 'perso', pathMatch: 'full'},
         ]
     },
 
@@ -38,7 +49,7 @@ export const routes: Routes = [
         children: [
             {path:'sauvegarder', component: Sauvegarder},
             {path:'charger', component: Charger},
-            {path:'', redirectTo: 'option', pathMatch: 'full'},
+            {path:'**', redirectTo: 'option', pathMatch: 'full'},
         ]
     },
     

@@ -23,12 +23,31 @@
 
 }
 
-a:hover 
-    {
-        display: flex;
-        color: var(--color5);
-        font-weight: bold;
-        text-decoration: underline;
-        scale : 1.25;
+.repos{
+
+    border: none;
+    background-color: transparent;
+    color: var(--color3);
+    font-size: 1em;
+
+    text-decoration: underline;
+}
+
+.repos:hover{
+    cursor: pointer;
+    display: flex;
+    color: var(--color5);
+    font-weight: bold;
+    text-decoration: underline;
+    scale : 1.25;
+}
+
+a:hover{
+
+    display: flex;
+    color: var(--color5);
+    font-weight: bold;
+    text-decoration: underline;
+    scale : 1.25;
                 
-    }
+}

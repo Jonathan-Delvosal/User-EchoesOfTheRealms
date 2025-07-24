@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-chatbox',
+  selector: 'app-affich-equip',
   imports: [RouterModule],
-  templateUrl: './chatbox.html',
-  styleUrl: './chatbox.scss'
+  templateUrl: './affich-equip.html',
+  styleUrl: './affich-equip.scss'
 })
-export class Chatbox {
+export class AffichEquip {
 
 }

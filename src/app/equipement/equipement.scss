@@ -23,6 +23,16 @@
 
 }
 
+.affich-equip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 71.4vw;
+    height: 74vh;
+
+}
+
 a:hover 
     {
         display: flex;

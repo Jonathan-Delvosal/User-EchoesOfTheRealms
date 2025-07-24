@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-chatbox',
+  selector: 'app-map',
   imports: [RouterModule],
-  templateUrl: './chatbox.html',
-  styleUrl: './chatbox.scss'
+  templateUrl: './map.html',
+  styleUrl: './map.scss'
 })
-export class Chatbox {
+export class Map {
 
 }
