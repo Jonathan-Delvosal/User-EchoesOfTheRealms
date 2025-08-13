@@ -1,1 +1,7 @@
-<p>map works!</p>
+<div *ngFor="let i of [].constructor(rows); let row = index" class="row">
+  <div
+    *ngFor="let j of [].constructor(cols); let col = index"
+    class="{{(isPerso(row, col) ? 'cellPerso' : 'cell')}}"
+    [attr.id]="row + '_' + col">
+  </div>
+</div>

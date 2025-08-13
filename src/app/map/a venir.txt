@@ -1,0 +1,25 @@
+ map: any;
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.http.get('Assets/Map/MaCarteTest.json').subscribe(data => {
+      this.map = data;
+    });
+  }
+
+
+
+  <div *ngIf="map">
+  <div *ngFor="let row of map; let i = index" class="row">
+    <div
+      *ngFor="let cell of row; let j = index"
+      Class="{
+        'cellPerso': isPerso(i, j),
+        'cellType1': cell === 1,
+        'cell': cell === 0 && !isPerso(i, j)
+      }"
+      [id]="i + '_' + j">
+    </div>
+  </div>
+</div>
