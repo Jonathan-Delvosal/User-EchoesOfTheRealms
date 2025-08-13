@@ -1,0 +1,24 @@
+- mémorisation de la position du joueur sur la grille du monde
+- faire un pop up pour le repos qui doit être confirmer par l'utilisateurs
+- faire une page "a propos" en lien sur le footer pour me présenter (en cliquant sur le hakuryu)
+- gestion des réglages d'affichage
+- ajouter un onglet de menu "compte" pour les infos utilisateurs (entre personnage et option ) ... ou ajouter le compte dans les options ? a voir
+- menu de connexion avec formulaire d'inscription
+
+
+- API venant du Code C#
+- intégration d'une musique
+- combat
+- gestion inventaire, équipement, repos, statistique, etc ... 
+
+
+- ajout des sprites selon la classe et sprites monstres (créer les sprites manquants)
+- sprites items ? pour l'inventaire et l'équipement 
+
+
+A PREVOIR
+- div / component stat monstre dans "Monde" (sur la droite)
+- div / component écran combat avec sprites (attaque, objet, magie, fuite) prenant toute la zone "monde"
+
+
+
