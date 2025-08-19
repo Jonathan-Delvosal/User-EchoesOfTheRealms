@@ -15,10 +15,18 @@
 - ajout des sprites selon la classe et sprites monstres (créer les sprites manquants)
 - sprites items ? pour l'inventaire et l'équipement 
 
+- première page, login et inscription
+- faire l'inscription
+- faire login
+- intersceptor et guard login
+
+
+
 
 A PREVOIR
 - div / component stat monstre dans "Monde" (sur la droite)
 - div / component écran combat avec sprites (attaque, objet, magie, fuite) prenant toute la zone "monde"
+- guard pour le log ... créer une page profil
 
 
 
