@@ -26,7 +26,6 @@
 A PREVOIR
 - div / component stat monstre dans "Monde" (sur la droite)
 - div / component écran combat avec sprites (attaque, objet, magie, fuite) prenant toute la zone "monde"
-- guard pour le log ... créer une page profil
 
 
 
