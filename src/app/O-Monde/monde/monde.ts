@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Statperso } from '../statperso/statperso';
+import { Statperso } from '../../O-Perso/statperso/statperso';
 import { Chatbox } from '../chatbox/chatbox';
 import { Map } from '../map/map';
 

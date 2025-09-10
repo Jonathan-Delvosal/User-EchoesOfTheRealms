@@ -1,56 +1,82 @@
 import { Routes } from '@angular/router';
-import { Monde } from './monde/monde';
+import { Monde } from './O-Monde/monde/monde';
 import { MenuPrincipale } from './menu-principale/menu-principale';
-import { Charger } from './charger/charger';
-import { Sauvegarder } from './sauvegarder/sauvegarder';
-import { FichePersonnage } from './fiche-personnage/fiche-personnage';
-import { Inventaire } from './inventaire/inventaire';
-import { Option } from './option/option';
-import { Statperso } from './statperso/statperso';
-import { Perso } from './perso/perso';
-import { Equipement } from './equipement/equipement';
-import { EquipementAjout } from './equipement-ajout/equipement-ajout';
-import { EquipementRetrait } from './equipement-retrait/equipement-retrait';
-import { Map } from './map/map';
-import { AffichEquip } from './affich-equip/affich-equip';
-import { Chatbox } from './chatbox/chatbox';
+import { Charger } from './O-Option/charger/charger';
+import { Sauvegarder } from './O-Option/sauvegarder/sauvegarder';
+import { FichePersonnage } from './O-Perso/fiche-personnage/fiche-personnage';
+import { Inventaire } from './O-Perso/inventaire/inventaire';
+import { Option } from './O-Option/option/option';
+import { Statperso } from './O-Perso/statperso/statperso';
+import { Perso } from './O-Perso/perso/perso';
+import { Equipement } from './O-Perso/equipement/equipement';
+import { EquipementAjout } from './O-Perso/equipement-ajout/equipement-ajout';
+import { EquipementRetrait } from './O-Perso/equipement-retrait/equipement-retrait';
+import { Map } from './O-Monde/map/map';
+import { AffichEquip } from './O-Perso/affich-equip/affich-equip';
+import { Chatbox } from './O-Monde/chatbox/chatbox';
+import { Logscreen } from './logscreen/logscreen';
+import { isLoggedGuard } from './Guard/is-logged-guard';
+import { Account } from './Account/account/account';
 
 
 export const routes: Routes = [
 
-    {path:'monde', component: Monde, 
-        children: [
-            {path: 'statperso', component: Statperso},
-            {path: "chatbox", component: Chatbox},
-            {path: "map", component: Map},
-            {path: '**', redirectTo: 'monde', pathMatch: 'full'},
-        ]
-    },
+    { path: "", pathMatch: "full", component: Logscreen },
 
-    {path: 'perso', component: Perso,
+    { path: "login", component: Logscreen },
+
+    {
+        path: "menu", component: MenuPrincipale, canActivate: [isLoggedGuard],
 
         children: [
-            {path: 'fiche-personnage', component: FichePersonnage},
-            {path: 'inventaire', component: Inventaire},
-            {path: 'equipement', component: Equipement, children: 
-                [
-                    {path: 'equipement-ajout', component: EquipementAjout},
-                    {path: 'equipement-retrait', component: EquipementRetrait},
-                    {path: '', component: AffichEquip},
-                    {path:'**', redirectTo: 'equipement', pathMatch: 'full'},
-                ]},
-                
-            {path:'**', redirectTo: 'perso', pathMatch: 'full'},
+            {
+                path: 'monde', component: Monde,
+                children: [
+                    { path: 'statperso', component: Statperso },
+                    { path: "chatbox", component: Chatbox },
+                    { path: "map", component: Map },
+                    {path: '**', redirectTo: 'monde', pathMatch: 'full'},
+                ]
+            },
+
+            {
+                path: 'perso', component: Perso,
+
+                children: [
+
+                    { path: 'fiche-personnage', component: FichePersonnage },
+
+                    { path: 'inventaire', component: Inventaire },
+
+                    {
+                        path: 'equipement', component: Equipement, children:
+                            [
+                                { path: 'equipement-ajout', component: EquipementAjout },
+                                { path: 'equipement-retrait', component: EquipementRetrait },
+                                { path: '', component: AffichEquip },
+                                {path:'**', redirectTo: 'equipement', pathMatch: 'full'},
+                            ]
+                    },
+
+                    {path:'**', redirectTo: 'perso', pathMatch: 'full'},
+                ]
+            },
+
+            {
+                path: 'option', component: Option,
+
+                children: [
+
+                    { path: 'sauvegarder', component: Sauvegarder },
+
+                    { path: 'charger', component: Charger },
+
+                    {path:'**', redirectTo: 'option', pathMatch: 'full'},
+
+                ]
+            },
+
+            {path: 'compte', component: Account}
         ]
     },
-
-    {path: 'option', component: Option,
-
-        children: [
-            {path:'sauvegarder', component: Sauvegarder},
-            {path:'charger', component: Charger},
-            {path:'**', redirectTo: 'option', pathMatch: 'full'},
-        ]
-    },
-    
 ];
