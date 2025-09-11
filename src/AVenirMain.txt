@@ -29,3 +29,4 @@ A PREVOIR
 
 
 
+pour lancer ng serve et json-serve ... taper "npm run dev"
