@@ -1,6 +1,9 @@
 .footer{
     
-     display: flex;
+    display: flex;
+
+    position: absolute;
+    bottom: 0;
 
     background-color: var(--color5);
 
@@ -10,5 +13,6 @@
     border-top: 5px solid var(--color1);
 
     height: 5vh;
+    width: 100vw;
 
 }
