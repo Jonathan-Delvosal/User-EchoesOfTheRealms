@@ -1,7 +1,9 @@
+<div class="LogContainer">
+
     <div class="SignIn">
 
-        <p>Connectez vous !</p>
-    
+        <h3>Connectez vous !</h3>
+
         <input type="text" pInputText [(ngModel)]="usernameSI" [invalid]="!usernameSI" />
 
         <br>
@@ -11,7 +13,7 @@
         <br>
         <br>
 
-        <p-button label="Connexion" (click)="onSignIn()"/>
+        <p-button label="Connexion" (click)="onSignIn()" />
 
     </div>
 
@@ -19,8 +21,8 @@
 
     <div class="SignUp">
 
-        <p>Inscrivez vous !</p>
-    
+        <h3>Inscrivez vous !</h3>
+
         <p-iftalabel>
 
             <input pInputText id="username" [(ngModel)]="usernameSU" autocomplete="off" [invalid]="!usernameSU" />
@@ -44,3 +46,5 @@
         <p-button label="Inscription" />
 
     </div>
+
+</div>
