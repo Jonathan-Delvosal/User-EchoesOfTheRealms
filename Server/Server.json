@@ -1,3 +1,19 @@
 {
-    "account": []
+  "account": [
+    {
+      "id": 1,
+      "name": "Haku",
+      "password": "1234-*"
+    },
+    {
+      "id": 2,
+      "name": "Account2",
+      "password": "password2"
+    },
+    {
+      "name": "Khun",
+      "password": "1234",
+      "id": 3
+    }
+  ]
 }

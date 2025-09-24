@@ -1,0 +1,26 @@
+<div class="LogContainer">
+
+    <div class="SignIn">
+
+        <h3>Connectez vous !</h3>
+
+        <input type="text" pInputText [(ngModel)]="usernameSI" [invalid]="!usernameSI" />
+
+        <br>
+
+        <p-password [(ngModel)]="passwordSI" [feedback]="false" [toggleMask]="true" [invalid]="!passwordSI" />
+
+        <br>
+        <br>
+
+        <p-button label="Connexion" (click)="onSignIn()" />
+
+    </div>
+
+    <p-divider layout="vertical" />
+
+    <div>
+        <a [routerLink]="['signup']">Inscription</a>
+    </div>
+
+</div>

@@ -1,32 +1,45 @@
-- mémorisation de la position du joueur sur la grille du monde
-- faire un pop up pour le repos qui doit être confirmer par l'utilisateurs
-- faire une page "a propos" en lien sur le footer pour me présenter (en cliquant sur le hakuryu)
-- gestion des réglages d'affichage
-- ajouter un onglet de menu "compte" pour les infos utilisateurs (entre personnage et option ) ... ou ajouter le compte dans les options ? a voir
-- menu de connexion avec formulaire d'inscription
-
-
-- API venant du Code C#
-- intégration d'une musique
-- combat
-- gestion inventaire, équipement, repos, statistique, etc ... 
-
-
-- ajout des sprites selon la classe et sprites monstres (créer les sprites manquants)
-- sprites items ? pour l'inventaire et l'équipement 
-
-- première page, login et inscription
-- faire l'inscription
-- faire login
-- intersceptor et guard login
-
-
-
+pour lancer ng serve et json-serve ... taper "npm run dev"
 
 A PREVOIR
 - div / component stat monstre dans "Monde" (sur la droite)
 - div / component écran combat avec sprites (attaque, objet, magie, fuite) prenant toute la zone "monde"
 
+Angular
+- gestion des réglages d'affichage
+- voir média querries pour responsives
+- mémorisation de la position du joueur sur la grille du monde
+- faire un pop up pour le repos qui doit être confirmer par l'utilisateurs
+- faire une page "a propos" en lien sur le footer pour me présenter (en cliquant sur le hakuryu)
 
+footer
+- supprimer le surlignage du pseudo pour la page about
+- faire le lien pour la page About et la remplir d'info me concernant + mise en page
 
-pour lancer ng serve et json-serve ... taper "npm run dev"
+logscreen:
+- revoir la page logscreen pour redimensionné la div
+
+SignUpScreen
+- revoir menu de connexion et formulaire d'inscription (plus complet)
+
+Sprite / Unity
+- intégrer Unity pour la map et pour les combats
+- ajout des sprites selon la classe et sprites monstres (créer les sprites manquants)
+- sprites items ? pour l'inventaire et l'équipement 
+- intégration d'une musique
+- combat
+
+API
+- gestion inventaire, équipement, repos, statistique, etc ... (voir lien agent IA avec mon Ia ou crewAI)
+- trouver moyen d'intégrer agent IA pour marchand et autres 
+- API venant du Code C#
+
+DB
+- ajout de la DB selon mon draw.io
+
+FAIT:
+- ajouter un onglet de menu "compte" pour les infos utilisateurs (entre personnage et option ) ... ou ajouter le compte dans les options ? a voir
+- première page, login et inscription
+- faire login
+- intersceptor et guard login
+- faire un SignUpScreen avec le formulaire pour le compte et l'intégrer au json
+- faire l'inscription en supprimant depuis le logscreen
