@@ -36,6 +36,10 @@ API
 DB
 - ajout de la DB selon mon draw.io
 
+json
+- Changer name par nickname
+- rajouter des infos
+
 FAIT:
 - ajouter un onglet de menu "compte" pour les infos utilisateurs (entre personnage et option ) ... ou ajouter le compte dans les options ? a voir
 - première page, login et inscription
