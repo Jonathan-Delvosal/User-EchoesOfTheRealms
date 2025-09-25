@@ -5,7 +5,8 @@ import { PasswordModule } from 'primeng/password';
 import { HttpClient } from '@angular/common/http';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
+import { Logscreen } from '../logscreen/logscreen';
 
 @Component({
   selector: 'app-sign-up-screen',
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
 export class SignUpScreen {
 
   private _httpClient = inject(HttpClient);
+  private _router = inject(Router);
 
   usernameSU: string = '';
   passwordSU: string = '';
@@ -23,6 +25,8 @@ export class SignUpScreen {
   onSignUp() {
     this._httpClient.post<any>('http://localhost:3000/account', { name: this.usernameSU, password: this.passwordSU }).subscribe(data => {
       alert('Inscription réussie !');
+
+      this._router.navigate(['/login']);
     })
   }
 }

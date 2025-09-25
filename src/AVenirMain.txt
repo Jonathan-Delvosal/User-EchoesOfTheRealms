@@ -9,11 +9,16 @@ Angular
 - voir média querries pour responsives
 - mémorisation de la position du joueur sur la grille du monde
 - faire un pop up pour le repos qui doit être confirmer par l'utilisateurs
+- revoir les "erreurs" de CSS 
 - faire une page "a propos" en lien sur le footer pour me présenter (en cliquant sur le hakuryu)
+- faire un formulaire de contact pour contacter le support 
 
 footer
 - supprimer le surlignage du pseudo pour la page about
 - faire le lien pour la page About et la remplir d'info me concernant + mise en page
+
+logservice:
+- voir pour mettre un système de Token en place pour les connexions
 
 logscreen:
 - revoir la page logscreen pour redimensionné la div

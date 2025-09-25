@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-banner',
@@ -7,6 +7,12 @@ import { RouterModule } from '@angular/router';
   templateUrl: './banner.html',
   styleUrl: './banner.scss'
 })
+
 export class Banner {
+  constructor(private _router: Router) {}
+
+  Redirect() {
+    this._router.navigate(['/menu']);
+  }
 
 }

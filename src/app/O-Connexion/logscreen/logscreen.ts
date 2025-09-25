@@ -39,6 +39,7 @@ export class Logscreen {
 
       if (data.some((a: any) => a.name === this.usernameSI && a.password === this.passwordSI )) {
   
+        this._logService.setUsername(this.usernameSI);
         alert('Connexion réussie !');
   
         // Remplacez par un vrai token

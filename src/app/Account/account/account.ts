@@ -19,8 +19,8 @@ export class Account {
   private _logService = inject(LogService);
 
   private _router = inject(Router);
-  
-  value: string | undefined = "Disabled"
+
+  accountName: string | null = this._logService.getUsername();
 
   LogOut(){
 

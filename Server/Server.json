@@ -3,7 +3,8 @@
     {
       "id": 1,
       "name": "Haku",
-      "password": "1234-*"
+      "password": "1234-*",
+      "statut": "admin"
     },
     {
       "id": 2,
@@ -19,6 +20,11 @@
       "name": "YannMi",
       "password": "1234-*",
       "id": 4
+    },
+    {
+      "name": "Prana13",
+      "password": "Prana13",
+      "id": 5
     }
   ]
 }
