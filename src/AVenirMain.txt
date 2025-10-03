@@ -12,6 +12,8 @@ Angular
 - revoir les "erreurs" de CSS 
 - faire une page "a propos" en lien sur le footer pour me présenter (en cliquant sur le hakuryu)
 - faire un formulaire de contact pour contacter le support (mailtrap)
+- faire une Card pour afficher un bestiaire, récupérant les infos de l'api par id pour chaque monstres
+- du coups, faire une onglet bestiaire qui affichera les cartes de chaques monstres de la DB et en cliquant sur la carte, elle affichera les détails avec un call API
 
 footer
 - supprimer le surlignage du pseudo pour la page about
