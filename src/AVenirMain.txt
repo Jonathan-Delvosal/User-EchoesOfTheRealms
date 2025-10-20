@@ -1,5 +1,7 @@
 pour lancer ng serve et json-serve ... taper "npm run dev"
 
+INTEGRER Les chroniques de Pyrékrim ... 
+
 A PREVOIR
 - div / component stat monstre dans "Monde" (sur la droite)
 - div / component écran combat avec sprites (attaque, objet, magie, fuite) prenant toute la zone "monde"
