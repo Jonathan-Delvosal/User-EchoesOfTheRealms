@@ -1,0 +1,30 @@
+Récap du projet:
+
+Le projet consiste à créer un jeu de rôle avec les différentes technologies vue en cours
+
+- Angular pour l'Ui 
+- DB pour stocker les informations
+- ASP MVC pour la création, ajout de contenu, "suppression" de contenu, update de contenu. 
+- WEB API pour relier la DB a Angular
+- Unity pour le coté graphique en 2D (apprentissage par moi même si le projet est fini ... un bonus quoi)
+
+Relation entre les tables:
+
+entré dans l'UI pour le customer, création de compte. 
+
+customer doit avoir une seule adresse - une adresse peut avoir plusieurs customer
+customer peut avoir un ou plusieurs personnages - un personnage ne peut avoir qu'un seul customer
+
+un personnage doit avoir une classe - une classe peut être sur plusieurs personnages
+un personnage doit avoir un inventaire - un inventaire n'est qu'a un seul personnage 
+
+un personnage peut avoir plusieurs équipements 1/types (casque, armure, bottes, armes, et d'autres par la suite) ... (je dois juste modifier la table personnage selon les dires de mon formateur pour qu'il y ai casqueID, armureID, bottesID, armesID et qui pointe vers la table équipement) - 
+    les équipements peuvent être équiper à plusieurs personnages et stocker dans l'inventaire
+
+    un équipement peut être donné en récompense par les monstres lors des combats
+
+les items sont stocker dans l'inventaire en plusieurs exemplaires et donner par les monstres en récompense de combats
+
+le Gold est stocker dans l'inventaire et donner par les monstres lors des combats
+
+les monstres peuvent "avoir" des items, de l'or ou de l'équipement à donner au personnages lors des combats 
