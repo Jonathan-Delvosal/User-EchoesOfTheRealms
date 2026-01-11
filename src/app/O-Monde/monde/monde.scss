@@ -16,7 +16,7 @@
 }
 
 .map-container{
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
 
     width: 86vw;
@@ -27,6 +27,41 @@
     z-index: 1000;
 }
 
+.map{
+    width: 70,9vw;
+    height: 61vh;
+
+    background-color: aqua;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+
+.proximity{
+    width: 8vw;
+    height: 61vh;
+
+    position: absolute;
+    right: 0vw;
+    top: 16.3vh;
+
+    background-color: pink;
+    border: 2px solid black;
+    z-index: 1000;
+}
+
+.encounter{
+    width: 8vw;
+    height: 61vh;
+
+    position: absolute;
+    right: 8vw;
+    top: 16.3vh;
+
+    background-color: blue;
+    border: 2px solid black;
+    z-index: 1000;
+}
+
 .chatbox{
     justify-content: center;
 
@@ -34,16 +69,6 @@
     height: 14vh;
 
     background-color: chartreuse;
-    border: 1px solid #ccc;
-    z-index: 1000;
-}
-
-
-.map{
-    width: 85,9vw;
-    height: 61vh;
-
-    background-color: aqua;
     border: 1px solid #ccc;
     z-index: 1000;
 }

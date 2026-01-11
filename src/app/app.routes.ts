@@ -1,23 +1,34 @@
 import { Routes } from '@angular/router';
-import { Monde } from './O-Monde/monde/monde';
+
 import { MenuPrincipale } from './menu-principale/menu-principale';
+
+import { Monde } from './O-Monde/monde/monde';
+import { Statperso } from './O-Monde/statperso/statperso';
+import { Map } from './O-Monde/map/map';
+import { Chatbox } from './O-Monde/chatbox/chatbox';
+import { Proximity } from './O-Monde/proximity/proximity';
+import { Encounter } from './O-Monde/encounter/encounter';
+
+import { Option } from './O-Option/option/option';
+import { Account } from './Account/account/account';
 import { Charger } from './O-Option/charger/charger';
 import { Sauvegarder } from './O-Option/sauvegarder/sauvegarder';
+
+import { Perso } from './O-Perso/perso/perso';
 import { FichePersonnage } from './O-Perso/fiche-personnage/fiche-personnage';
 import { Inventaire } from './O-Perso/inventaire/inventaire';
-import { Option } from './O-Option/option/option';
-import { Statperso } from './O-Perso/statperso/statperso';
-import { Perso } from './O-Perso/perso/perso';
 import { Equipement } from './O-Perso/equipement/equipement';
 import { EquipementAjout } from './O-Perso/equipement-ajout/equipement-ajout';
 import { EquipementRetrait } from './O-Perso/equipement-retrait/equipement-retrait';
-import { Map } from './O-Monde/map/map';
 import { AffichEquip } from './O-Perso/affich-equip/affich-equip';
-import { Chatbox } from './O-Monde/chatbox/chatbox';
+
+import { Merchant } from './O-Marchand/merchant/merchant';
+
 import { Logscreen } from './O-Connexion/logscreen/logscreen';
-import { isLoggedGuard } from './Guard/is-logged-guard';
-import { Account } from './Account/account/account';
 import { SignUpScreen } from './O-Connexion/sign-up-screen/sign-up-screen';
+
+import { isLoggedGuard } from './Guard/is-logged-guard';
+
 import { About } from './Decoration/about/about';
 
 
@@ -58,6 +69,14 @@ export const routes: Routes = [
 
                     { 
                         path: "map", component: Map 
+                    },
+
+                    { 
+                        path: "proximity", component: Proximity
+                    },
+
+                    { 
+                        path: "encounter", component: Encounter
                     },
 
                     { 
@@ -134,6 +153,10 @@ export const routes: Routes = [
 
             { 
                 path: 'compte', component: Account 
+            },
+
+            { 
+                path: 'marchand', component: Merchant
             }
             
         ]

@@ -13,6 +13,10 @@ Angular
 - faire une page "a propos" en lien sur le footer pour me présenter (en cliquant sur le hakuryu)
 - faire un formulaire de contact pour contacter le support (mailtrap)
 
+Marchand
+- disabled si pas de marchand à "proximité"
+
+
 footer
 - supprimer le surlignage du pseudo pour la page about
 - faire le lien pour la page About et la remplir d'info me concernant + mise en page
