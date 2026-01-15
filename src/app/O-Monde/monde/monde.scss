@@ -27,8 +27,22 @@
     z-index: 1000;
 }
 
+.map-box{
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    width: 86vw;
+    height: 61vh;
+
+    background-color: var(--color7);
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+
 .map{
-    width: 70,9vw;
+    width: 70vw;
     height: 61vh;
 
     background-color: aqua;
