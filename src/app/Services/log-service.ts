@@ -32,8 +32,11 @@ export class LogService {
 
   }
 
-  private _username: string | null = null;
 
+
+  
+  private _username: string | null = null;
+// jwtdecode
   setUsername(username: string) {
     this._username = username;
   }

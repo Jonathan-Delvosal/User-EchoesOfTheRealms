@@ -36,7 +36,7 @@ export class Logscreen {
 
   onSignIn() {
 
-    this._httpClient.get<any>('http://localhost:3000/account').subscribe(data => {
+    this._httpClient.get<any>('http://localhost:5050/swagger/v1/api/Authentication/login').subscribe(data => {
 
       if (data.some((a: any) => a.name === this.usernameSI && a.password === this.passwordSI )) {
   
