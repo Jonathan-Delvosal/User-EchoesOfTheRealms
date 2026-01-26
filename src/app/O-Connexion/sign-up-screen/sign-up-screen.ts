@@ -43,7 +43,7 @@ export class SignUpScreen {
         error: (err) => {
           console.error(err);
           if (err.status === 400) {
-            alert('Le Nickname et l\'email doivent être uniques.');
+            alert('Le pseudo et l\'email doivent être uniques.');
           } else {
             alert('Une erreur est survenue lors de l\'inscription.');
           }
