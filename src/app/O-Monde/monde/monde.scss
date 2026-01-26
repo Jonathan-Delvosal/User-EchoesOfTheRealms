@@ -18,7 +18,7 @@
     height: 75vh;
 
     background-color: red;
-    border: 2px solid #ccc;
+    border: 2px solid var(--color1);
     z-index: 1000;
 }
 
@@ -30,7 +30,7 @@
     height: 75vh;
 
     background-color: var(--color6);
-    border: 2px solid var(--color6);
+    border: 2px solid var(--color1);
     z-index: 1000;
 }
 
@@ -42,7 +42,7 @@
     height: calc(100% - 14vh); 
 
     background-color: var(--color7);
-    border-bottom: 2px solid var(--color6); 
+    border-bottom: 2px solid var(--color1); 
     z-index: 1000;
 }
 
@@ -52,7 +52,7 @@
     height: 100%;
 
     background-color: aqua;
-    border: 2px solid var(--color6);
+    border: 2px solid var(--color1);
     z-index: 1000;
 }
 
@@ -62,7 +62,7 @@
     height: 100%;
 
     background-color: pink;
-    border: 2px solid var(--color6);
+    border: 2px solid var(--color1);
     z-index: 1000;
 }
 
@@ -72,7 +72,7 @@
     height: 100%;
 
     background-color: blue;
-    border: 2px solid var(--color6);
+    border: 2px solid var(--color1);
     z-index: 1000;
 }
 
@@ -86,6 +86,6 @@
     height: 14vh;
 
     background-color: chartreuse;
-    border-top: 2px solid var(--color6);
+    border: 2px solid var(--color1);
     z-index: 1000;
 }
