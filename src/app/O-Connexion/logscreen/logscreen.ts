@@ -25,39 +25,43 @@ import { HttpClient } from '@angular/common/http';
 
 export class Logscreen {
 
+  usernameSI: string = '';
+  passwordSI: string = '';
+
   private _logService = inject(LogService);
 
   private _router = inject(Router);
 
   private _httpClient = inject(HttpClient);
 
-  public usernameSI: string = '';
-  public passwordSI: string = '';
-
   onSignIn() {
 
-    this._httpClient.get<any>('http://localhost:5050/swagger/v1/api/Authentication/login').subscribe(data => {
+    const body = {
+      username: this.usernameSI,
+      password: this.passwordSI
+    };
 
-      if (data.some((a: any) => a.name === this.usernameSI && a.password === this.passwordSI )) {
-  
-        this._logService.setUsername(this.usernameSI);
-        alert('Connexion réussie !');
-  
-        // Remplacez par un vrai token
-        this._logService.setToken('Hakus_Token'); 
-  
-        // Rediriger vers une autre page ou effectuer d'autres actions
-        this._router.navigate(['/menu']);
-  
-      } 
-      else {
-  
-        alert('Nom d\'utilisateur ou mot de passe incorrect.');
-  
-      }
-    })
+    this._httpClient
+      .post<any>('http://localhost:5050/api/Authentication/login', body)
+      .subscribe({
+        next: (response) => {
 
+          const jwt = response.token;
+
+          if (jwt) {
+            this._logService.setToken(jwt);
+            this._logService.setUsername(this.usernameSI);
+
+            alert('Connexion réussie !');
+            this._router.navigate(['/menu']);
+          }
+        },
+        error: () => {
+          alert('Nom d\'utilisateur ou mot de passe incorrect.');
+        }
+      });
   }
-
-  
 }
+
+
+

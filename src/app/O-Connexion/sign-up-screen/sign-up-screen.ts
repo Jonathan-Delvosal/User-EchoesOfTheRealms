@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
-import { Logscreen } from '../logscreen/logscreen';
+
 
 @Component({
   selector: 'app-sign-up-screen',
