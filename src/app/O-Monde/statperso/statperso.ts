@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { environment } from '../../../environments/environment';
+import { HeroService } from '../../Services/hero-service';
 
 @Component({
   selector: 'app-statperso',
@@ -8,5 +11,11 @@ import { RouterModule } from '@angular/router';
   styleUrl: './statperso.scss'
 })
 export class Statperso {
+
+  _heroService = inject(HeroService)
+
+  Character: string = this._heroService.Character;
+
+  
 
 }
