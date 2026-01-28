@@ -1,27 +1,45 @@
 <div class="SignUp">
 
-        <h3>Inscrivez vous !</h3>
+    <h3>Inscrivez vous !</h3>
 
-        <p-iftalabel>
+    <p-iftalabel>
+        <input pInputText id="nickName" [(ngModel)]="nickName" name="nickName" autocomplete="off"
+            [class.p-invalid]="!nickName" />
+        <label for="nickName">Pseudo</label>
+    </p-iftalabel>
+    <br>
 
-            <input pInputText id="username" [(ngModel)]="usernameSU" autocomplete="off" [invalid]="!usernameSU" />
+    <p-iftalabel>
+        <p-password [(ngModel)]="password" name="password" [feedback]="false" [toggleMask]="true"
+            [class.p-invalid]="!password"></p-password>
+        <label for="password">Password</label>
+    </p-iftalabel>
+    <br>
 
-            <label for="usernameSU">Username</label>
+    <p-iftalabel>
+        <input pInputText id="firstName" [(ngModel)]="firstName" name="firstName" autocomplete="off"
+            [class.p-invalid]="!firstName" />
+        <label for="firstName">Prénom</label>
+    </p-iftalabel>
+    <br>
 
-        </p-iftalabel>
+    <p-iftalabel>
+        <input pInputText id="lastName" [(ngModel)]="lastName" name="lastName" autocomplete="off"
+            [class.p-invalid]="!lastName" />
+        <label for="lastName">Nom</label>
+    </p-iftalabel>
+    <br>
 
-        <br>
+    <p-iftalabel>
+        <input pInputText type="email" id="mail" [(ngModel)]="mail" name="mail" autocomplete="off"
+            [class.p-invalid]="!mail" />
+        <label for="mail">Email</label>
+    </p-iftalabel>
+    <br>
 
-        <p-iftalabel>
+    <p-button label="Inscription" (onClick)="onSignUp()"
+        [disabled]="!nickName || !password || !firstName || !lastName || !mail">
+    </p-button>
 
-            <p-password [(ngModel)]="passwordSU" [feedback]="false" [toggleMask]="true" [invalid]="!passwordSU" />
 
-            <label for="passwordSU">Password</label>
-
-        </p-iftalabel>
-
-        <br>
-
-        <p-button label="Inscription" (onClick)="onSignUp()"/>
-
-    </div>
+</div>

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
-import { Logscreen } from '../logscreen/logscreen';
+
 
 @Component({
   selector: 'app-sign-up-screen',
@@ -19,14 +19,35 @@ export class SignUpScreen {
   private _httpClient = inject(HttpClient);
   private _router = inject(Router);
 
-  usernameSU: string = '';
-  passwordSU: string = '';
+  nickName: string = '';
+  password: string = '';
+  firstName: string = '';
+  lastName: string = '';
+  mail: string = '';
 
   onSignUp() {
-    this._httpClient.post<any>('http://localhost:3000/account', { name: this.usernameSU, password: this.passwordSU }).subscribe(data => {
-      alert('Inscription réussie !');
+    const payload = {
+      nickName: this.nickName,
+      password: this.password,
+      firstName: this.firstName,
+      lastName: this.lastName,
+      mail: this.mail
+    };
 
-      this._router.navigate(['/login']);
-    })
+    this._httpClient.post<any>('http://localhost:5050/api/Authentication/register', payload)
+      .subscribe({
+        next: () => {
+          alert('Inscription réussie !');
+          this._router.navigate(['/login']);
+        },
+        error: (err) => {
+          console.error(err);
+          if (err.status === 400) {
+            alert('Le pseudo et l\'email doivent être uniques.');
+          } else {
+            alert('Une erreur est survenue lors de l\'inscription.');
+          }
+        }
+      });
   }
 }
