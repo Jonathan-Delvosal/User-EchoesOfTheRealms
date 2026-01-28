@@ -11,6 +11,7 @@ import { ButtonModule } from 'primeng/button';
 import { IftaLabelModule } from 'primeng/iftalabel';
 
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 
 
@@ -42,7 +43,7 @@ export class Logscreen {
     };
 
     this._httpClient
-      .post<any>('http://localhost:5050/api/Authentication/login', body)
+      .post<any>(environment.ApiUrl +'/Authentication/login', body)
       .subscribe({
         next: (response) => {
 
