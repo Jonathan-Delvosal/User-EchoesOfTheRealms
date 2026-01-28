@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -34,7 +35,7 @@ export class SignUpScreen {
       mail: this.mail
     };
 
-    this._httpClient.post<any>('http://localhost:5050/api/Authentication/register', payload)
+    this._httpClient.post<any>(environment.ApiUrl +'/Authentication/register', payload)
       .subscribe({
         next: () => {
           alert('Inscription réussie !');
