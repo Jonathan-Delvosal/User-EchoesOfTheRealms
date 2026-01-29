@@ -4,88 +4,217 @@
     padding: 0;
 }
 
+/* =========================================================
+   LAYOUT PAR DÉFAUT — DESKTOP / PAYSAGE LARGE
+========================================================= */
+
 .global {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
 
+/* COLONNE STATS */
 .statperso {
     width: 14vw;
-    height: 75vh;
-
+    height: 100vh;
     background-color: red;
-    border: 2px solid var(--color1);
-    z-index: 1000;
+    border-right: 0.2vw solid var(--color1);
 }
 
+/* COLONNE PRINCIPALE */
 .map-container {
     display: flex;
     flex-direction: column;
-    
     width: 86vw;
-    height: 75vh;
-
-    background-color: var(--color6);
-    border: 2px solid var(--color1);
-    z-index: 1000;
+    height: 100vh;
 }
 
+/* ZONE MAP + PANELS */
 .map-box {
     display: flex;
-    flex-direction: row;
-    
+    flex: 1;
+    height: 86vh;
     width: 100%;
-    height: calc(100% - 14vh); 
-
     background-color: var(--color7);
-    border-bottom: 2px solid var(--color1); 
-    z-index: 1000;
+    border-bottom: 0.2vw solid var(--color1);
 }
 
-
+/* MAP */
 .map {
     flex: 1;
     height: 100%;
-
     background-color: aqua;
-    border: 2px solid var(--color1);
-    z-index: 1000;
+    border-right: 0.2vw solid var(--color1);
 }
 
-
+/* PANELS */
+.encounter,
 .proximity {
     width: 8vw;
     height: 100%;
-
-    background-color: pink;
-    border: 2px solid var(--color1);
-    z-index: 1000;
+    border-left: 0.2vw solid var(--color1);
 }
-
 
 .encounter {
-    width: 8vw;
-    height: 100%;
-
     background-color: blue;
-    border: 2px solid var(--color1);
-    z-index: 1000;
 }
 
+.proximity {
+    background-color: pink;
+}
 
+/* CHAT */
 .chatbox {
+    height: 14vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    width: 100%;
-    height: 14vh;
-
     background-color: chartreuse;
-    border: 2px solid var(--color1);
-    z-index: 1000;
+}
+
+/* =========================================================
+   TABLETTE — LARGEUR RÉDUITE
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .statperso {
+        width: 20vw;
+    }
+
+    .map-container {
+        width: 80vw;
+    }
+
+    .map-box {
+        flex-direction: column;
+    }
+
+    .map {
+        height: 60vh;
+        width: 100%;
+        border-right: none;
+        border-bottom: 0.2vw solid var(--color1);
+    }
+
+    .encounter,
+    .proximity {
+        width: 100%;
+        height: 13vh;
+        border-left: none;
+        border-top: 0.2vw solid var(--color1);
+    }
+}
+
+/* =========================================================
+   MOBILE — PORTRAIT PAR DÉFAUT
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .global {
+        flex-direction: column;
+    }
+
+    .statperso {
+        width: 100vw;
+        height: 15vh;
+        border-right: none;
+        border-bottom: 0.2vw solid var(--color1);
+    }
+
+    .map-container {
+        width: 100vw;
+        height: 85vh;
+    }
+
+    .map-box {
+        flex-direction: column;
+        height: 65vh;
+    }
+
+    .map {
+        height: 45vh;
+        border-bottom: 0.2vw solid var(--color1);
+    }
+
+    .encounter,
+    .proximity {
+        height: 10vh;
+        width: 100%;
+    }
+
+    .chatbox {
+        height: 20vh;
+    }
+}
+
+/* =========================================================
+   ORIENTATION : PAYSAGE (SMARTPHONE / TABLET)
+========================================================= */
+
+@media (orientation: landscape) and (max-width: 1024px) {
+
+    .global {
+        flex-direction: row;
+    }
+
+    .statperso {
+        width: 18vw;
+        height: 100vh;
+        border-bottom: none;
+        border-right: 0.2vw solid var(--color1);
+    }
+
+    .map-container {
+        width: 82vw;
+        height: 100vh;
+    }
+
+    .map-box {
+        flex-direction: row;
+        height: 80vh;
+    }
+
+    .map {
+        flex: 1;
+        height: 100%;
+        border-bottom: none;
+        border-right: 0.2vw solid var(--color1);
+    }
+
+    .encounter,
+    .proximity {
+        width: 10vw;
+        height: 100%;
+        border-top: none;
+        border-left: 0.2vw solid var(--color1);
+    }
+
+    .chatbox {
+        height: 20vh;
+    }
+}
+
+/* =========================================================
+   ORIENTATION : PORTRAIT STRICT (SÉCURITÉ)
+========================================================= */
+
+@media (orientation: portrait) and (max-width: 768px) {
+
+    .map {
+        height: 42vh;
+    }
+
+    .encounter,
+    .proximity {
+        height: 11vh;
+    }
+
+    .chatbox {
+        height: 21vh;
+    }
 }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
+import { PCSheet } from '../models/PCSheet';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +9,14 @@ import { environment } from '../../environments/environment';
 export class HeroService {
 _client = inject(HttpClient)
 
-Character: string;
+pcSheet!: PCSheet;
   
 constructor() {
-    this.Character = this._client.get<string>(environment.ApiUrl + '/Character/GetCharacterName') as unknown as string;
+    this._client.get<PCSheet>(environment.ApiUrl + '/Character/GetPCStat').subscribe(data => {
+      this.pcSheet = data;
+    })
+
+
     
   }
   

@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { environment } from '../../../environments/environment';
 import { HeroService } from '../../Services/hero-service';
+import { PCSheet } from '../../models/PCSheet';
 
 @Component({
   selector: 'app-statperso',
@@ -14,7 +14,7 @@ export class Statperso {
 
   _heroService = inject(HeroService)
 
-  Character: string = this._heroService.Character;
+  psSheet: PCSheet = this._heroService.pcSheet;
 
   
 
