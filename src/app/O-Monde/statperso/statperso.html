@@ -1,30 +1,31 @@
-<h3>Statistiques du personnage:</h3>
-<h4>{{pcSheet.name}}</h4>
+<!-- <h3>Statistiques du personnage:</h3> -->
+@if(pcSheet()) {
+<h4>{{pcSheet()!.name}}</h4>
 
-<p>Classe: {{pcSheet.class}}</p>
+<p>Classe: {{pcSheet()!.class}}</p>
 <br>
-<p>Niveau: {{pcSheet.lvl}}</p>
-<p>XP: {{pcSheet.xp}} / {{pcSheet.xpToNextLevel}}</p>
-<br>
-<p>Or: {{pcSheet.gold}}</p>
+<p>Niveau: {{pcSheet()!.lvl}}</p>
+<p>XP: {{pcSheet()!.xp}} / {{pcSheet()!.xpToNextLevel}}</p>
+<p>Or: {{pcSheet()!.gold}}</p>
 
 <ul>
-  <li>PV: {{pcSheet.hp}} / {{pcSheet.hpMax}} </li>
-  <li>Magie: {{pcSheet.mana}} / {{pcSheet.manaMax}} </li>
+  <li>PV: {{pcSheet()!.hp}} / {{pcSheet()!.hpMax}} </li>
+  <li>Magie: {{pcSheet()!.mana}} / {{pcSheet()!.manaMax}} </li>
 </ul>
 
 <h5>Caractéristiques:</h5>
 
 <ul>
-  <li>Force: {{pcSheet.str}} / {{pcSheet.strMax}}</li>
-  <li>Dextérité: {{pcSheet.dex}} / {{pcSheet.dexMax}}</li>
-  <li>Intelligence: {{pcSheet.intel}} / {{pcSheet.intelMax}}</li>
+  <li>Force: {{pcSheet()!.str}}</li>
+  <li>Dextérité: {{pcSheet()!.dex}}</li>
+  <li>Intelligence: {{pcSheet()!.intel}}</li>
 </ul>
 
 <h5>Résistances:</h5>
 
 <ul>
-  <li>Feu: {{pcSheet.resFire}}</li>
-  <li>Glace: {{pcSheet.resIce}}</li>
-  <li>Éclair: {{pcSheet.resLightning}}</li>
+  <li>Feu: {{ResFire()}}</li>
+  <li>Glace: {{ResIce()}}</li>
+  <li>Foudre: {{ResLightning()}}</li>
 </ul>
+}
