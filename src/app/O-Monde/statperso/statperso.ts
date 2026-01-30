@@ -14,7 +14,7 @@ export class Statperso {
 
   _heroService = inject(HeroService)
 
-  psSheet: PCSheet = this._heroService.pcSheet;
+  pcSheet: PCSheet = this._heroService.pcSheet;
 
   
 
