@@ -1,26 +1,30 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { HeroService } from '../../Services/hero-service';
-import { PCSheet } from '../../models/PCSheet';
 
 @Component({
   selector: 'app-statperso',
-  imports: [RouterModule],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './statperso.html',
-  styleUrl: './statperso.scss'
+  styleUrls: ['./statperso.scss']
 })
 export class Statperso {
 
-  _heroService = inject(HeroService)
+  private hero = inject(HeroService);
 
-  pcSheet = this._heroService.pcSheet;
+  identity = this.hero.identity;
+  job = this.hero.job;
 
-  HpMax = computed(() => (this.pcSheet()?.hpMax ?? 0));
+  HpMax = this.hero.HpMax;
+  ManaMax = this.hero.ManaMax;
 
-  ManaMax = computed(() => (this.pcSheet()?.manaMax ?? 0));
+  Str = this.hero.Str;
+  Dex = this.hero.Dex;
+  Intel = this.hero.Intel;
 
-  ResFire = computed(() => (this.pcSheet()?.resFire ?? 0));
-  ResIce = computed(() => (this.pcSheet()?.resIce ?? 0));
-  ResLightning = computed(() => (this.pcSheet()?.resLightning ?? 0));
-
+  ResFire = this.hero.ResFire;
+  ResIce = this.hero.ResIce;
+  ResLightning = this.hero.ResLightning;
 }

@@ -8,9 +8,8 @@
 
     <p-card [header]="sheet.name"  class="character-card">
 
-      <p>Classe : {{ sheet.class }}</p>
+      <p>Classe : {{ sheet.job?.name }}</p>
       <p>Niveau : {{ sheet.lvl }}</p>
-
       <button (click)="onclick(sheet.id)">Charger</button>
 
     </p-card>

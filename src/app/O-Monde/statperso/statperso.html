@@ -1,24 +1,23 @@
 <!-- <h3>Statistiques du personnage:</h3> -->
-@if(pcSheet()) {
-<h4>{{pcSheet()!.name}}</h4>
+@if(identity()) {
+<h4>{{identity()?.name}}</h4>
 
-<p>Classe: {{pcSheet()!.class}}</p>
+<p>Classe: {{job()?.name}}</p>
 <br>
-<p>Niveau: {{pcSheet()!.lvl}}</p>
-<p>XP: {{pcSheet()!.xp}} / {{pcSheet()!.xpToNextLevel}}</p>
-<p>Or: {{pcSheet()!.gold}}</p>
-
+<p>Niveau: {{identity()?.lvl}}</p>
+<p>XP: {{identity()?.xp}} / {{identity()?.xpToNextLevel}}</p>
+<p>Or: {{identity()?.gold}}</p>
 <ul>
-  <li>PV: {{pcSheet()!.hp}} / {{pcSheet()!.hpMax}} </li>
-  <li>Magie: {{pcSheet()!.mana}} / {{pcSheet()!.manaMax}} </li>
+  <li>PV: {{identity()?.hp}} / {{HpMax()}}</li>
+  <li>Magie: {{identity()?.mana}} / {{ManaMax()}}</li>
 </ul>
 
 <h5>Caractéristiques:</h5>
 
 <ul>
-  <li>Force: {{pcSheet()!.str}}</li>
-  <li>Dextérité: {{pcSheet()!.dex}}</li>
-  <li>Intelligence: {{pcSheet()!.intel}}</li>
+  <li>Force: {{Str()}}</li>
+  <li>Dextérité: {{Dex()}}</li>
+  <li>Intelligence: {{Intel()}}</li>
 </ul>
 
 <h5>Résistances:</h5>

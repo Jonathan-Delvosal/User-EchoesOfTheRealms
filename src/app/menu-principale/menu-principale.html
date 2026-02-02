@@ -1,11 +1,13 @@
 
 <div class="main-container">
     
-    @if(_heroServ.pcSheet()) {
+    @if(_heroServ.identity()) {
 
         <a [routerLink]="['monde']">Monde</a>
     
     }
+        <a [routerLink]="['marchand']">Quêtes</a>
+
         <a [routerLink]="['marchand']">Marchand</a>
         
         <a [routerLink]="['perso']">Personnage</a>

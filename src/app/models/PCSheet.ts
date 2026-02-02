@@ -1,3 +1,5 @@
+import { JobSheet } from "./JobSheet";
+
 export interface PCSheet {
 
     id: number;
@@ -27,4 +29,8 @@ export interface PCSheet {
     xp: number;
     xpToNextLevel: number;
     gold: number;
+
+
+    jobId: number;
+    job: JobSheet;
 }

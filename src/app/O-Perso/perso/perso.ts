@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HeroService } from '../../Services/hero-service';
 
 @Component({
   selector: 'app-perso',
@@ -9,5 +10,8 @@ import { RouterModule } from '@angular/router';
 })
 export class Perso {
 
+  private hero = inject(HeroService);
+
+  rest = () => this.hero.rest();
 
 }
