@@ -1,3 +1,4 @@
+import { EquipmentSheet } from "./EquipmentSheet";
 import { JobSheet } from "./JobSheet";
 
 export interface PCSheet {
@@ -33,4 +34,18 @@ export interface PCSheet {
 
     jobId: number;
     job: JobSheet;
+
+    weaponId: number;
+    weapon: EquipmentSheet;
+
+    helmetId: number;
+    helmet: EquipmentSheet;
+
+    armorId: number;
+    armor: EquipmentSheet;
+
+    bootsId: number;
+    boots: EquipmentSheet;
+
+
 }
