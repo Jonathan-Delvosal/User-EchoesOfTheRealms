@@ -1,0 +1,38 @@
+<div class="card">
+
+    <p-floatlabel variant="in">
+        <input pInputText id="in_label" [(ngModel)]="value2" autocomplete="off" />
+        <label for="in_label">Pseudo</label>
+    </p-floatlabel>
+
+    @for (job of jobs; track $index) {
+
+            <div  class="flex items-center">
+        
+                <div class="mb-4 p-8">
+        
+                    <p-card [header]="job.name" class="w-full md:w-25rem">
+        
+                        <p>Hp: {{job.bonusHP}}</p>
+                        <p>Mana: {{job.bonusMana}}</p>
+                        <br>
+                        <p>Force: {{job.bonusStr}}</p>
+                        <p>Dextérité: {{job.bonusDex}}</p>
+                        <p>Intelligence: {{job.bonusIntel}}</p>
+                        <br>
+                        <p>Vitalité: {{job.bonusVita}}</p>
+                        <br>
+                        <p>Résistance Feu: {{job.bonusResFire}}</p>
+                        <p>Résistance Glace: {{job.bonusResIce}}</p>
+                        <p>Résistance Foudre: {{job.bonusResLightning}}</p>
+
+                        <p-button label="Sélectionner" icon="pi pi-check" iconPos="right" />
+        
+                    </p-card>
+        
+                </div>
+        
+            </div>
+    }
+
+</div>

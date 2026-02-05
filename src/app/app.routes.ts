@@ -30,6 +30,7 @@ import { SignUpScreen } from './O-Connexion/sign-up-screen/sign-up-screen';
 import { isLoggedGuard } from './Guard/is-logged-guard';
 
 import { About } from './Decoration/about/about';
+import { Creer } from './O-Option/creer/creer';
 
 
 export const routes: Routes = [
@@ -141,6 +142,10 @@ export const routes: Routes = [
 
                     { 
                         path: 'charger', component: Charger 
+                    },
+
+                    { 
+                        path: 'creer', component: Creer 
                     },
 
                     { 
