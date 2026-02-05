@@ -31,12 +31,13 @@ import { isLoggedGuard } from './Guard/is-logged-guard';
 
 import { About } from './Decoration/about/about';
 import { Creer } from './O-Option/creer/creer';
+import { Fight } from './O-Fight/fight/fight';
 
 
 export const routes: Routes = [
 
-    { 
-        path: "", pathMatch: "full", component: Logscreen 
+    {
+        path: "", pathMatch: "full", component: Logscreen
     },
 
     {
@@ -60,71 +61,77 @@ export const routes: Routes = [
                 path: 'monde', component: Monde,
                 children: [
 
-                    { 
-                        path: 'statperso', component: Statperso 
+                    {
+                        path: 'statperso', component: Statperso
                     },
 
-                    { 
-                        path: "chatbox", component: Chatbox 
+                    {
+                        path: "chatbox", component: Chatbox
                     },
 
-                    { 
-                        path: "map", component: Map 
+                    {
+                        path: "map", component: Map,
+                        children: [
+
+                            {
+                                path: "fight", component: Fight
+                            },
+                        ]
                     },
 
-                    { 
+                    {
                         path: "proximity", component: Proximity
                     },
 
-                    { 
+                    {
                         path: "encounter", component: Encounter
                     },
 
-                    { 
-                        path: '**', redirectTo: 'monde', pathMatch: 'full' 
+                    {
+                        path: '**', redirectTo: 'monde', pathMatch: 'full'
                     },
 
                 ]
             },
 
             {
-                
+
                 path: 'perso', component: Perso,
                 children: [
 
-                    { 
-                        path: 'fiche-personnage', component: FichePersonnage 
+                    {
+                        path: 'fiche-personnage', component: FichePersonnage
                     },
 
-                    { 
-                        path: 'inventaire', component: Inventaire 
+                    {
+                        path: 'inventaire', component: Inventaire
                     },
 
                     {
                         path: 'equipement', component: Equipement,
                         children: [
 
-                            { 
-                                path: 'equipement-ajout', component: EquipementAjout 
+                            {
+                                path: 'equipement-ajout', component: EquipementAjout
                             },
 
-                            { 
-                                path: 'equipement-retrait', component: EquipementRetrait 
+                            {
+                                path: 'equipement-retrait', component: EquipementRetrait
                             },
 
-                            { 
-                                path: '', component: AffichEquip 
+                            {
+                                path: '', component: AffichEquip
                             },
 
-                            { 
-                                path: '**', redirectTo: 'equipement', pathMatch: 'full' 
+                            {
+                                path: '**', redirectTo: 'equipement', pathMatch: 'full'
                             },
 
                         ]
                     },
 
-                    { 
-                        path: '**', redirectTo: 'perso', pathMatch: 'full' 
+                    {
+                        path: '**', redirectTo: 'perso', pathMatch: 'full'
                     },
 
                 ]
@@ -136,34 +143,34 @@ export const routes: Routes = [
                 path: 'option', component: Option,
                 children: [
 
-                    { 
-                        path: 'sauvegarder', component: Sauvegarder 
+                    {
+                        path: 'sauvegarder', component: Sauvegarder
                     },
 
-                    { 
-                        path: 'charger', component: Charger 
+                    {
+                        path: 'charger', component: Charger
                     },
 
-                    { 
-                        path: 'creer', component: Creer 
+                    {
+                        path: 'creer', component: Creer
                     },
 
-                    { 
-                        path: '**', redirectTo: 'option', pathMatch: 'full' 
+                    {
+                        path: '**', redirectTo: 'option', pathMatch: 'full'
                     },
 
                 ]
 
             },
 
-            { 
-                path: 'compte', component: Account 
+            {
+                path: 'compte', component: Account
             },
 
-            { 
+            {
                 path: 'marchand', component: Merchant
             }
-            
+
         ]
 
     },
