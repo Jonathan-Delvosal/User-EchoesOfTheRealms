@@ -54,7 +54,7 @@ export class Logscreen {
             this._logService.setUsername(this.usernameSI);
 
             alert('Connexion réussie !');
-            this._router.navigate(['/menu']);
+            this._router.navigate(['/menu/option/charger']);
           }
         },
         error: () => {

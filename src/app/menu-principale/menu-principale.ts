@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HeroService } from '../Services/hero-service';
 
 @Component({
   selector: 'app-menu-principale',
@@ -8,5 +9,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './menu-principale.scss'
 })
 export class MenuPrincipale {
-
+  _heroServ = inject(HeroService);
 }

@@ -1,91 +1,167 @@
+
+:host {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+/* =========================================================
+   RESET
+========================================================= */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+html, body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================================
+   VARIABLES DE COULEUR
+========================================================= */
+:root {
+    --color1: #333;
+}
+
+/* =========================================================
+   LAYOUT GLOBAL
+========================================================= */
 .global {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
 }
 
+/* STAT PERSO */
 .statperso {
-    width: 14vw;
-    height: 75vh;
-
+    flex: 0 0 14%;
+    min-width: 120px;
     background-color: red;
-    border: 2px solid var(--color1);
-    z-index: 1000;
+    border-right: 2px solid var(--color1);
+    overflow: auto;
 }
 
+/* MAP + PANELS + CHATBOX */
 .map-container {
     display: flex;
+    flex: 1;
     flex-direction: column;
-    
-    width: 86vw;
-    height: 75vh;
-
-    background-color: var(--color6);
-    border: 2px solid var(--color1);
-    z-index: 1000;
+    min-width: 0;
 }
 
+/* MAP + ENCOUNTER + PROXIMITY */
 .map-box {
     display: flex;
-    flex-direction: row;
-    
-    width: 100%;
-    height: calc(100% - 14vh); 
-
-    background-color: var(--color7);
-    border-bottom: 2px solid var(--color1); 
-    z-index: 1000;
-}
-
-
-.map {
     flex: 1;
-    height: 100%;
+    min-height: 0;
+}
 
+/* MAP */
+.map {
+    flex: 7;
     background-color: aqua;
-    border: 2px solid var(--color1);
-    z-index: 1000;
+    border-right: 2px solid var(--color1);
+    min-width: 0;
+    overflow: auto;
 }
 
-
-.proximity {
-    width: 8vw;
-    height: 100%;
-
-    background-color: pink;
-    border: 2px solid var(--color1);
-    z-index: 1000;
+/* PANELS */
+.encounter, .proximity {
+    flex: 1;
+    min-width: 0;
+    overflow: auto;
+    border-left: 2px solid var(--color1);
 }
 
+.encounter { background-color: blue; }
+.proximity { background-color: pink; }
 
-.encounter {
-    width: 8vw;
-    height: 100%;
-
-    background-color: blue;
-    border: 2px solid var(--color1);
-    z-index: 1000;
-}
-
-
+/* CHATBOX */
 .chatbox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    width: 100%;
-    height: 14vh;
-
+    flex: 0 0 14%;
+    min-height: 80px;
     background-color: chartreuse;
-    border: 2px solid var(--color1);
-    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+/* =========================================================
+   TABLETTE / MOBILE
+========================================================= */
+@media (max-width: 1024px) {
+
+    .global {
+        flex-direction: column;
+    }
+
+    .statperso {
+        flex: 0 0 20%;
+        min-height: 120px;
+        border-right: none;
+        border-bottom: 2px solid var(--color1);
+    }
+
+    .map-box {
+        flex-direction: column;
+    }
+
+    .map {
+        flex: 3;
+        border-right: none;
+        border-bottom: 2px solid var(--color1);
+    }
+
+    .encounter, .proximity {
+        flex: 1;
+        border-left: none;
+        border-top: 2px solid var(--color1);
+    }
+
+    .chatbox {
+        flex: 0 0 20%;
+        min-height: 100px;
+    }
+}
+
+/* ORIENTATION PAYSAGE TABLETTE */
+@media (orientation: landscape) and (max-width: 1024px) {
+
+    .global {
+        flex-direction: row;
+    }
+
+    .statperso {
+        flex: 0 0 18%;
+        min-width: 120px;
+        border-bottom: none;
+        border-right: 2px solid var(--color1);
+    }
+
+    .map-box {
+        flex-direction: row;
+    }
+
+    .map {
+        flex: 7;
+        border-bottom: none;
+        border-right: 2px solid var(--color1);
+    }
+
+    .encounter, .proximity {
+        flex: 1;
+        border-top: none;
+        border-left: 2px solid var(--color1);
+    }
+
+    .chatbox {
+        flex: 0 0 20%;
+        min-width: 120px;
+    }
 }

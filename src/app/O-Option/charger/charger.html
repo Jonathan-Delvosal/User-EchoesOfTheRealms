@@ -1,1 +1,22 @@
-<p>charger works!</p>
+<div class="charger-container">
+
+  <h2>Charger une fiche de personnage</h2>
+
+  @for (sheet of pcSheets(); track sheet.id) {
+  
+  <div class="mb-4 p-8 border-round-lg border-1 surface-border, shadow-2">
+
+    <p-card [header]="sheet.name"  class="character-card">
+
+      <p>Classe : {{ sheet.job.name }}</p>
+      <p>Niveau : {{ sheet.lvl }}</p>
+      <button (click)="onclick(sheet.id)">Charger</button>
+
+    </p-card>
+
+  </div>
+
+}
+
+ 
+</div>
