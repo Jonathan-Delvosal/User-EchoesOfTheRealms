@@ -32,6 +32,7 @@ import { isLoggedGuard } from './Guard/is-logged-guard';
 import { About } from './Decoration/about/about';
 import { Creer } from './O-Option/creer/creer';
 import { Fight } from './O-Fight/fight/fight';
+import { hasPcSheetsGuard } from './Guard/has-pc-sheets-guard';
 
 
 export const routes: Routes = [
@@ -148,7 +149,7 @@ export const routes: Routes = [
                     },
 
                     {
-                        path: 'charger', component: Charger
+                        path: 'charger', component: Charger, canActivate: [hasPcSheetsGuard]
                     },
 
                     {

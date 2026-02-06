@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { LoadingService } from '../../Services/loading-service';
 import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
 import { HeroService } from '../../Services/hero-service';
+import { LoadingService } from '../../Services/loading-service';
 
 @Component({
   selector: 'app-charger',
@@ -13,21 +13,19 @@ import { HeroService } from '../../Services/hero-service';
 })
 export class Charger {
 
-
-  _loadServ = inject(LoadingService)
-  _heroServ = inject(HeroService)
-  _router = inject(Router)
+  private _loadServ = inject(LoadingService);
+  private _heroServ = inject(HeroService);
+  private _router = inject(Router);
 
   pcSheets = this._loadServ.pcSheets;
 
   constructor() {
-
     this._loadServ.loadPCSheets();
   }
 
-  onclick(id: number) {
-      this._heroServ.loadPCSheet(id);
-      this._router.navigate(['/menu','monde']);
+  onclick(id: number): void {
+    this._heroServ.loadPCSheet(id);
+    this._router.navigate(['/menu', 'monde']);
   }
 
 }
