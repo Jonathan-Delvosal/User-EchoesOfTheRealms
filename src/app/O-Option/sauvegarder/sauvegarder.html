@@ -1,1 +1,25 @@
-<p>sauvegarder works!</p>
+<div class="saver-container">
+
+  <h2>Sauvegarder un personnage</h2>
+
+  
+
+  <div class="mb-4 p-8 border-round-lg border-1 surface-border, shadow-2">
+
+    @if(pcSheets) {
+        
+        <p-card [header]="pcSheets.name" class="character-card">
+    
+          <p>Classe : {{ pcSheets.job.name }}</p>
+          <p>Niveau : {{ pcSheets.lvl }}</p>
+          <button (click)="onclick(pcSheets)">Sauvegarder</button>
+    
+        </p-card>
+    }
+    @else {        
+        <p>Aucune fiche de personnage disponible pour la sauvegarde.</p>
+    }
+  </div>
+
+
+</div>

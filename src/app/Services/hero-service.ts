@@ -11,25 +11,10 @@ export class HeroService {
 
   private _client = inject(HttpClient);
   private _router = inject(Router);
-  private _pcSheet = signal<PCSheet | null>(null);
+  public _pcSheet = signal<PCSheet | null>(null);
 
-  loadPCSheet(id: number) {
-    this._client.get<PCSheet>(
-      environment.ApiUrl + '/Character/GetPCStat/' + id,
-      {
-        headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('token')
-        }
-      }
-    ).subscribe({
-      next: data => {
-        this._pcSheet.set(data);
-      },
-      error: err => {
-        console.error('Error fetching PCSheet:', err);
-        this._router.navigate(['/logscreen']);
-      }
-    });
+  loadPCSheet(sheet: PCSheet) {
+    this._pcSheet.set(sheet);
   }
 
   baseStats = computed(() => {

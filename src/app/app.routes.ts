@@ -63,33 +63,12 @@ export const routes: Routes = [
                 children: [
 
                     {
-                        path: 'statperso', component: Statperso
-                    },
-
-                    {
-                        path: "chatbox", component: Chatbox
-                    },
-
-                    {
                         path: "map", component: Map,
-                        children: [
-
-                            {
-                                path: "fight", component: Fight
-                            },
-                        ]
-                    },
-
+                        
+                        
+                    }, 
                     {
-                        path: "proximity", component: Proximity
-                    },
-
-                    {
-                        path: "encounter", component: Encounter
-                    },
-
-                    {
-                        path: '**', redirectTo: 'monde', pathMatch: 'full'
+                        path: "fight", component: Fight
                     },
 
                 ]

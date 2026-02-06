@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
 import { HeroService } from '../../Services/hero-service';
 import { LoadingService } from '../../Services/loading-service';
+import { PCSheet } from '../../models/PCSheet';
 
 @Component({
   selector: 'app-charger',
@@ -23,9 +24,9 @@ export class Charger {
     this._loadServ.loadPCSheets();
   }
 
-  onclick(id: number): void {
-    this._heroServ.loadPCSheet(id);
-    this._router.navigate(['/menu', 'monde']);
+  onclick(sheet: PCSheet): void {
+    this._heroServ.loadPCSheet(sheet);
+    this._router.navigate(['/menu', 'monde', 'map']);
   }
 
 }
