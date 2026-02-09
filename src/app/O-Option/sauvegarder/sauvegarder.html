@@ -12,7 +12,8 @@
     
           <p>Classe : {{ pcSheets.job.name }}</p>
           <p>Niveau : {{ pcSheets.lvl }}</p>
-          <button (click)="onclick(pcSheets)">Sauvegarder</button>
+          <p-button (click)="onclick($event, pcSheets)" label="Sauvegarder" [outlined]="true" />
+          <!-- <button (click)="onclick(pcSheets)">Sauvegarder</button> -->
     
         </p-card>
     }

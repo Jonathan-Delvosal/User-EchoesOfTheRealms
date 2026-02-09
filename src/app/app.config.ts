@@ -5,6 +5,8 @@ import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { providePrimeNG } from 'primeng/config';
 import Nora from '@primeuix/themes/nora';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +18,10 @@ export const appConfig: ApplicationConfig = {
       theme: {
         preset: Nora
       }
-    })
+    }),
+
+    provideAnimations(),
+    MessageService,
+    ConfirmationService
   ]
 };

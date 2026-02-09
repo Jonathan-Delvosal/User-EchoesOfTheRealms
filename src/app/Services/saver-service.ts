@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { PCSheet } from '../models/PCSheet';
 import { SavingSheet } from '../models/SavingSheet';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,8 @@ export class SaverService {
 
   private _savingSheet: SavingSheet | null = null;
   private _pcSheet: PCSheet | null = null;
+
+  _client = inject(HttpClient)
 
 
 
@@ -39,7 +43,18 @@ export class SaverService {
     }
 
     // call api to save dataToSave to backend
+      return this._client.put<SavingSheet>(environment.ApiUrl + '/Character/PutSavePC/' + sheet.id, {
+            headers:
+            {
+              Authorization: 'Bearer ' + localStorage.getItem('token')
+            },
+            body: dataToSave
+          })
+      
+    }
 
-  }
-  
+
+
+
+
 }
