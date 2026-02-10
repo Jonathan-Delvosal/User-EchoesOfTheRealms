@@ -1,36 +1,43 @@
 <div class="card">
 
     <p-floatlabel variant="in">
-        <input pInputText id="in_label" [(ngModel)]="value2" autocomplete="off" />
+        <input pInputText id="in_label" [(ngModel)]="name" autocomplete="off" required />
         <label for="in_label">Pseudo</label>
+        @if (!name || name.trim().length === 0) {
+        <small class="error" style="color: red;">
+            Le pseudo est obligatoire
+        </small>}
     </p-floatlabel>
+
+    
 
     <div class="jobs-container">
         @for (job of jobs; track $index) {
-            <p-card [header]="job.name" class="job-card">
-                <p>Hp: {{job.bonusHP}}</p>
-                <p>Mana: {{job.bonusMana}}</p>
+        <p-card [header]="job.name" class="job-card">
+            <p>Hp: {{job.bonusHP}}</p>
+            <p>Mana: {{job.bonusMana}}</p>
 
-                <br>
+            <br>
 
-                <p>Force: {{job.bonusStr}}</p>
-                <p>Dextérité: {{job.bonusDex}}</p>
-                <p>Intelligence: {{job.bonusIntel}}</p>
+            <p>Force: {{job.bonusStr}}</p>
+            <p>Dextérité: {{job.bonusDex}}</p>
+            <p>Intelligence: {{job.bonusIntel}}</p>
 
-                <br>
+            <br>
 
-                <p>Vitalité: {{job.bonusVita}}</p>
+            <p>Vitalité: {{job.bonusVita}}</p>
 
-                <br>
+            <br>
 
-                <p>Résistance Feu: {{job.bonusResFire}}</p>
-                <p>Résistance Glace: {{job.bonusResIce}}</p>
-                <p>Résistance Foudre: {{job.bonusResLightning}}</p>
+            <p>Résistance Feu: {{job.bonusResFire}}</p>
+            <p>Résistance Glace: {{job.bonusResIce}}</p>
+            <p>Résistance Foudre: {{job.bonusResLightning}}</p>
 
-                <br>
+            <br>
 
-                <p-button label="Sélectionner" icon="pi pi-check" iconPos="right" />
-            </p-card>
+            <p-button (click)="onclick($event, job.id)" label="Sélectionner" icon="pi pi-check" iconPos="right"
+                [disabled]="!name || name.trim().length === 0" />
+        </p-card>
         }
     </div>
 

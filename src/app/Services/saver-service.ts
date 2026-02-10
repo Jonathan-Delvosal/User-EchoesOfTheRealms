@@ -9,12 +9,7 @@ import { environment } from '../../environments/environment';
 })
 export class SaverService {
 
-  private _savingSheet: SavingSheet | null = null;
-  private _pcSheet: PCSheet | null = null;
-
   _client = inject(HttpClient)
-
-
 
   savePCSheet(sheet: PCSheet) {
 
@@ -43,12 +38,11 @@ export class SaverService {
     }
 
     // call api to save dataToSave to backend
-      return this._client.put<SavingSheet>(environment.ApiUrl + '/Character/PutSavePC/' + sheet.id, {
+      return this._client.put<SavingSheet>(environment.ApiUrl + '/Character/PutSavePC/' + sheet.id, dataToSave,{
             headers:
             {
-              Authorization: 'Bearer ' + localStorage.getItem('token')
+              authorization: 'Bearer ' + localStorage.getItem('token')
             },
-            body: dataToSave
           })
       
     }

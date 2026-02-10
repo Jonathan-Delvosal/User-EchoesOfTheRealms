@@ -21,7 +21,6 @@ export class Sauvegarder {
 
   private _SaveServ = inject(SaverService);
   private _heroServ = inject(HeroService);
-  private _router = inject(Router);
 
   private confirmationService = inject(ConfirmationService);
   private messageService = inject(MessageService);
