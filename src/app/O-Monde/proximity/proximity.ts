@@ -24,7 +24,7 @@ export class Proximity {
       const randomCount = Math.floor(Math.random() * 10) + 1; 
 
       for(let i = 0; i <randomCount; i++) {
-      this?._client.get(environment.ApiUrl +'/monster/Random Level?lvlMin=1&lvlMax=5').subscribe(data => this.monsters.push(data))
+      this?._client.get(environment.ApiUrl +'/monster/RandomLevel?lvlMin=1&lvlMax=5').subscribe(data => this.monsters.push(data))
     }
 }
 
