@@ -1,30 +1,45 @@
-<!-- <h3>Statistiques du personnage:</h3> -->
 @if(identity()) {
-<h4>{{identity()?.name}}</h4>
+  <h4>{{ identity()?.name }}</h4>
 
-<p>Classe: {{job()?.name}}</p>
-<br>
-<p>Niveau: {{identity()?.lvl}}</p>
-<p>XP: {{identity()?.xp}} / {{identity()?.xpToNextLevel}}</p>
-<p>Or: {{identity()?.gold}}</p>
-<ul>
-  <li>PV: {{identity()?.hp}} / {{HpMax()}}</li>
-  <li>Magie: {{identity()?.mana}} / {{ManaMax()}}</li>
-</ul>
+  <p>Classe: {{ job()?.name }}</p>
+  <br>
 
-<h5>Caractéristiques:</h5>
+  <p>Niveau: {{ identity()?.lvl }}</p>
 
-<ul>
-  <li>Force: {{Str()}}</li>
-  <li>Dextérité: {{Dex()}}</li>
-  <li>Intelligence: {{Intel()}}</li>
-</ul>
+  <p>XP: {{ identity()?.xp }} / {{ identity()?.xpToNextLevel }}</p>
 
-<h5>Résistances:</h5>
+  <p>Or: {{ identity()?.gold }}</p>
 
-<ul>
-  <li>Feu: {{ResFire()}}</li>
-  <li>Glace: {{ResIce()}}</li>
-  <li>Foudre: {{ResLightning()}}</li>
-</ul>
+  <ul>
+    <li>PV: {{ identity()?.hp }} / {{ HpMax() }}</li>
+    <li>Magie: {{ identity()?.mana }} / {{ ManaMax() }}</li>
+  </ul>
+
+  <h5>Caractéristiques:</h5>
+  <ul>
+    <li>Force: {{ Str() }}</li>
+    <li>Dextérité: {{ Dex() }}</li>
+    <li>Intelligence: {{ Intel() }}</li>
+  </ul>
+
+  <h5>Résistances:</h5>
+  <ul>
+    <li>
+      Feu:
+      {{ ResFire() }}
+      @if (ResFireTotal() !== ResFire()) { ({{ ResFireTotal() }}) }
+    </li>
+
+    <li>
+      Glace:
+      {{ ResIce() }}
+      @if (ResIceTotal() !== ResIce()) { ({{ ResIceTotal() }}) }
+    </li>
+
+    <li>
+      Foudre:
+      {{ ResLightning() }}
+      @if (ResLightningTotal() !== ResLightning()) { ({{ ResLightningTotal() }}) }
+    </li>
+  </ul>
 }

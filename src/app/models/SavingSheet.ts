@@ -1,34 +1,15 @@
 export interface SavingSheet {
+  hp: number;
+  mana: number;
 
-    hp: number;
-    hpMax: number;
-    
-    mana: number;
-    manaMax: number;
+  lvl: number;
+  xp: number;
+  gold: number;
 
-    str: number;
-    dex: number;
-    intel: number;
+  jobId: number;
 
-    vita: number;
-    vitaMax: number;
-
-    resFire: number;
-    resIce: number;
-    resLightning: number;
-
-    lvl: number;
-    xp: number;
-    gold: number;
-
-
-    jobId: number;
-
-    weaponId: number;
-
-    helmetId: number;
-
-    armorId: number;
-
-    bootsId: number;
+  weaponId?: number | null;
+  helmetId?: number | null;
+  armorId?: number | null;
+  bootId?: number | null;
 }

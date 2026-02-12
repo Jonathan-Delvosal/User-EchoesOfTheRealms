@@ -1,75 +1,79 @@
-import { Component, effect, inject } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
-import { HeroService } from '../../Services/hero-service';
-import { LoadingService } from '../../Services/loading-service';
+import { Component, inject } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { CardModule } from 'primeng/card';
-import { PCSheet } from '../../models/PCSheet';
 import { SaverService } from '../../Services/saver-service';
+import { HeroService } from '../../Services/hero-service';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
-import { MessageService, ConfirmationService } from 'primeng/api';
-import { Button } from "primeng/button";
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-sauvegarder',
-  imports: [RouterModule, CommonModule, CardModule, Button],
+  standalone: true,
+  imports: [
+    RouterModule,
+    CommonModule,
+    ButtonModule,
+    ConfirmDialogModule,
+    ToastModule,
+    CardModule
+  ],
+  providers: [ConfirmationService, MessageService],
   templateUrl: './sauvegarder.html',
   styleUrl: './sauvegarder.scss'
 })
 export class Sauvegarder {
 
-  private _SaveServ = inject(SaverService);
+  private _saveServ = inject(SaverService);
   private _heroServ = inject(HeroService);
-
   private confirmationService = inject(ConfirmationService);
   private messageService = inject(MessageService);
 
-  pcSheets: PCSheet | null = null;
+  // ✅ on réutilise directement le computed du service (pas computed(computed))
+  sheet = this._heroServ.sheet;
 
-  constructor() {
-    effect(() => {
-      this.pcSheets = this._heroServ._pcSheet();
-    })
-  }
+  onclick(event: Event) {
+    const currentSheet = this.sheet();
+    if (!currentSheet) return;
 
-  onclick(event: Event, sheet: PCSheet) {
-
-    console.log(42);
-    
     this.confirmationService.confirm({
       target: event.target as EventTarget,
       message: 'Voulez vous sauvegarder votre personnage ?',
       header: 'Sauvegarder',
       icon: 'pi pi-info-circle',
       rejectLabel: 'Annuler',
-      rejectButtonProps: {
-        label: 'Annuler',
-        severity: 'danger',
-        outlined: true
-      },
-      acceptButtonProps: {
-        label: 'Sauvegarder',
-        severity: 'success',
-        outlined: true
-      },
+      acceptLabel: 'Sauvegarder',
 
       accept: () => {
-        this._SaveServ.savePCSheet(sheet).subscribe(() => {
+        const sheetToSave = this.sheet();
+        if (!sheetToSave) {
+          this.messageService.add({
+            severity: 'warn',
+            summary: 'Info',
+            detail: 'Aucune fiche chargée'
+          });
+          return;
+        }
 
-          this.messageService.add({ severity: 'success', summary: 'Confirmed', detail: 'Personnage sauvegardé' });
-        })
-      },
-      reject: () => {
-        this.messageService.add({ severity: 'error', summary: 'Rejected', detail: 'You have rejected' });
+        this._saveServ.savePCSheet(sheetToSave).subscribe({
+          next: () => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Succès',
+              detail: 'Personnage sauvegardé'
+            });
+          },
+          error: () => {
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Erreur',
+              detail: 'Erreur lors de la sauvegarde'
+            });
+          }
+        });
       }
     });
   }
-
-  // onclick(sheet: PCSheet): void {
-  //   this._SaveServ.savePCSheet(sheet).subscribe(() => {
-
-  //   })
-  // }
-
 }
