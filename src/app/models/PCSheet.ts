@@ -13,7 +13,7 @@ export interface PCSheet {
     manaMax: number;
 
     str: number;
-    strMax: number;
+    strMax: number; 
     dex: number;
     dexMax: number;
     intel: number;

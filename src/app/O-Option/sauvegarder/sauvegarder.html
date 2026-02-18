@@ -1,1 +1,14 @@
-<p>sauvegarder works!</p>
+<p-confirmDialog></p-confirmDialog>
+<p-toast></p-toast>
+
+@if(sheet(); as s) {
+  <p-card [header]="s.name">
+    <p>Classe : {{ s.job.name }}</p>
+    <p>Niveau : {{ s.lvl }}</p>
+
+    <p-button label="Sauvegarder" icon="pi pi-save" (onClick)="onclick($event)"></p-button>
+  </p-card>
+}
+@else {
+  <p>Aucune fiche de personnage disponible pour la sauvegarde.</p>
+}

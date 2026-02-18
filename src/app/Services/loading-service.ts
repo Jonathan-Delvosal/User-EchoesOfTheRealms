@@ -23,6 +23,9 @@ export class LoadingService {
       .subscribe({
         next: data => {
           this.pcSheets.set(data);
+        },
+        error: () => {
+          this._router.navigate(['/logscreen']);
         }
       })}
 

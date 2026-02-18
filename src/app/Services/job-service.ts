@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { JobSheet } from '../models/JobSheet';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 import { tab } from '@primeuix/themes/aura/tabs';
 import { tap } from 'rxjs';
 

@@ -24,7 +24,13 @@ export class Statperso {
   Dex = this.hero.Dex;
   Intel = this.hero.Intel;
 
+  // Résistances capées (effectives)
   ResFire = this.hero.ResFire;
   ResIce = this.hero.ResIce;
   ResLightning = this.hero.ResLightning;
+
+  // Résistances brutes (totales)
+  ResFireTotal = this.hero.ResFireTotal;
+  ResIceTotal = this.hero.ResIceTotal;
+  ResLightningTotal = this.hero.ResLightningTotal;
 }
