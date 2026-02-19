@@ -1,7 +1,5 @@
 <div class="proximity">
-    
-    @for(monster of monsters; track  $index){ 
-        <p>- {{ monster.name }}</p>
-    }
-    
+  @for (monster of monsters(); track $index) {
+    <p>- {{ monster.name }}</p>
+  }
 </div>

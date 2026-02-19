@@ -1,1 +1,24 @@
-<p>encounter works!</p>
+@if (monster(); as m) {
+  <div class="encounter-container">
+
+    <h3>{{ m.name }}</h3>
+
+    <ul>
+      <li>PV : {{ m.hp }}</li>
+      <li>Mana : {{ m.mana }}</li>
+      <li>Défense : {{ m.defense }}</li>
+    </ul>
+
+    <h5>Résistances</h5>
+    <ul>
+      <li>Feu : {{ m.resFire }}%</li>
+      <li>Glace : {{ m.resIce }}%</li>
+      <li>Foudre : {{ m.resLightning }}%</li>
+    </ul>
+
+  </div>
+} @else {
+  <div class="encounter-container">
+    <p>Aucun monstre.</p>
+  </div>
+}
