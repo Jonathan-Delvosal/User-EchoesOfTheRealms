@@ -9,6 +9,7 @@ import { JobSheet } from '../../models/JobSheet';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { NewCharacterService } from '../../Services/new-character-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-creer',
@@ -30,13 +31,14 @@ export class Creer {
   private _newCServ = inject(NewCharacterService);
   private confirmationService = inject(ConfirmationService);
   private messageService = inject(MessageService);
+  private _router = inject(Router);
 
   name: string | undefined;
   jobs!: JobSheet[] | null;
 
   ngOnInit() {
-    this._job.loadJobSheet().subscribe(() => {
-      this.jobs = this._job.Jobsheet();
+    this._job.loadJobSheet().subscribe((jobs) => {
+      this.jobs = jobs;
     });
   }
 
@@ -59,6 +61,7 @@ export class Creer {
             summary: 'Succès',
             detail: `Personnage ${this.name} créé`
           });
+          this._router.navigate(['charger']);
         });
       }
     });

@@ -18,13 +18,7 @@ export class NewCharacterService {
     }
 
     // call api to save dataFromNew to backend
-      return this._client.post<PCSheet>(environment.ApiUrl + '/Character/PostNewPC', dataFromNew,{
-            headers:
-            {
-              authorization: 'Bearer ' + localStorage.getItem('token')
-            },
-          })
-      
+    return this._client.post<PCSheet>(environment.ApiUrl + '/Character/PostNewPC', dataFromNew);
     }
   
 }

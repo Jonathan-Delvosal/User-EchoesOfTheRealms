@@ -31,12 +31,6 @@ export class SaverService {
 
     return this._client.put<void>(
       `${environment.ApiUrl}/Character/PutSavePC/${sheet.id}`,
-      dataToSave,
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        }
-      }
-    );
+      dataToSave);
   }
 }
