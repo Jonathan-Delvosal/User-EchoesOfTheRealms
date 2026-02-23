@@ -1,59 +1,180 @@
-# JeuxAngu
+# Jeux Angu - RPG en ligne
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.
+Un jeu de rôle (RPG) full-stack moderne créé avec Angular, ASP.NET Core, et une base de données SQL. Le projet démontre l'intégration complète entre le frontend et le backend pour un système de jeu immersif avec combat, inventaire, commerce et exploration.
 
-## Development server
+## 🎮 Fonctionnalités Principales
 
-To start a local development server, run:
+### Système d'authentification
+- **Inscription et Connexion** : Création de compte et authentification sécurisée
+- **JWT Interceptor** : Protection des requêtes API avec tokens JWT
+- **Guards** : Vérification des permissions d'accès aux sections du jeu
 
-```bash
-ng serve
+### Gestion des Personnages
+- **Création de personnage** : Création d'un nouveau héros avec sélection de classe/métier
+- **Fiche personnage** : Affichage des statistiques et compétences
+- **Système d'équipement** : Équipement par zone (casque, armure, bottes, armes, etc.)
+- **Inventaire** : Gestion des objets et ressources collectés
+- **Sauvegarde/Chargement** : Persistance des données du personnage
+
+### Système de Combat
+- **Combat au tour par tour** : Affrontements tactiques avec monstres
+- **Calcul d'attaque** : Système de dégâts basé sur les statistiques
+- **Récompenses** : Obtention d'or, d'équipements et d'objets après victoire
+- **Etat du combat** : Suivi de l'état des combattants
+
+### Monde Explorable
+- **Carte 2D** : Navigation dans le monde du jeu
+- **Détection de proximité** : Système de rencontre avec les monstres
+- **Affichage des statistiques** : Vue des stats du personnage en exploration
+
+### Système de Marchand
+- **Commerce** : Achat et vente d'équipements et d'objets
+- **Gestion de l'inventaire** : Équipement et retrait d'objets
+
+## 🛠️ Stack Technologique
+
+### Frontend
+- **Angular 20.1.0** : Framework principal pour l'interface utilisateur
+- **TypeScript** : Langage de programmation
+- **RxJS** : Gestion des flux asynchrones
+- **PrimeNG & PrimeFlex** : Composants UI professionnels
+- **SCSS** : Stylisation avancée
+
+### Backend
+- **ASP.NET Core** : Framework backend (WEB API)
+- **C#** : Langage de programmation
+- **Base de données SQL** : Stockage persistant des données
+
+### Outils de développement
+- **Angular CLI** : Outils de développement Angular
+- **Karma & Jasmine** : Framework de test
+- **json-server** : Serveur mock pour le développement local
+- **Prettier** : Formatage du code
+
+## 📁 Structure du Projet
+
+```
+src/
+├── app/
+│   ├── Account/              # Gestion des comptes utilisateurs
+│   ├── Decoration/           # Composants visuels (bannière, footer, about)
+│   ├── Guard/                # Guards pour la protection des routes
+│   ├── Interceptor/          # Intercepteurs HTTP (JWT)
+│   ├── models/               # Modèles de données TypeScript
+│   ├── O-Connexion/          # Module de connexion/inscription
+│   ├── O-Fight/              # Module de combat
+│   ├── O-Marchand/           # Module marchand
+│   ├── O-Monde/              # Module monde et exploration
+│   ├── O-Option/             # Module options (charger/sauvegarder)
+│   ├── O-Perso/              # Module gestion personnage
+│   ├── Services/             # Services métier et API
+│   └── Utils/                # Utilitaires et helper tools
+├── environments/             # Configuration par environnement
+├── public/                   # Assets statiques
+└── styles.scss               # Styles globaux
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚀 Installation et Démarrage
 
-## Code scaffolding
+### Prérequis
+- Node.js (v20 ou supérieure)
+- npm ou yarn
+- Backend API en cours d'exécution (ASP.NET Core)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Installation
 
 ```bash
-ng generate --help
+# Cloner le repository
+git clone <url-du-repository>
+cd JeuxAngu
+
+# Installer les dépendances
+npm install
 ```
 
-## Building
-
-To build the project run:
+### Démarrage du développement
 
 ```bash
-ng build
+# Mode développement simple
+npm start
+# L'application sera disponible à http://localhost:4200/
+
+# Mode développement avec serveur mock et API
+npm run dev
+# Lance concurrément Angular et json-server
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Build pour la production
 
 ```bash
-ng test
+npm run build
+# Les fichiers de distribution seront dans le dossier dist/
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Lancer les tests
 
 ```bash
-ng e2e
+npm test
+# Lance les tests avec Karma et Jasmine
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 🗄️ Modèles de Données Principaux
 
-## Additional Resources
+### Customer (Utilisateur)
+- Compte utilisateur avec authentification
+- Relation 1:N avec Personnages
+- Relation 1:1 avec Adresse
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Personnage (PCSheet)
+- Statistiques (force, dextérité, constitution, etc.)
+- Classe/Métier (JobSheet)
+- Inventaire (EquipmentSheet)
+- Équipements équipés par zone
+
+### Système d'Attaque
+- Calcul basé sur les statistiques du personnage
+- Application des dégâts au combat (AttackResult)
+- Persévérance aux combats
+
+### Monstres
+- État du monstre (MonsterState)
+- Récompenses (or, équipements, objets)
+
+## 📝 Services Principaux
+
+- **CharacterApiService** : Communication avec l'API pour les personnages
+- **CombatApiService** : Gestion des combats
+- **HeroService** : Service métier pour le héros actuel
+- **SaverService** : Sauvegarde et chargement des données
+- **CombatStateService** : État global du combat
+- **ProximityService** : Détection de proximité pour les rencontres
+
+## 🔐 Sécurité
+
+- **JWT Interceptor** : Ajout automatique du token JWT aux requêtes
+- **IsLoggedGuard** : Protection des routes pour utilisateurs authentifiés
+- **HasPCSheetsGuard** : Vérification de la possession d'un personnage
+- **Authentification ASP.NET** : Validation serveur
+
+## 🎯 Objectifs du Projet
+
+Ce projet démontre :
+- ✅ Intégration frontend/backend complète
+- ✅ Système d'authentification sécurisé
+- ✅ Architecture modulaire et évolutive
+- ✅ Gestion d'état avec RxJS
+- ✅ Design pattern et bonnes pratiques Angular
+- ✅ API RESTful bien structurée
+- ✅ Système de gameplay complet (combat, inventaire, économie)
+
+## 👨‍💻 Auteur
+
+Projet développé à des fins éducatives pour approfondir les connaissances en :
+- Angular moderne
+- ASP.NET Core
+- Architecture full-stack
+- Développement de jeu
+
+## 📄 Licence
+
+Ce projet est fourni à titre éducatif.
