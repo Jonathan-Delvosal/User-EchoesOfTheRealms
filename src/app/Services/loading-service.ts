@@ -14,12 +14,7 @@ export class LoadingService {
 
   pcSheets = signal<PCSheet[]|null>(null);
 
-  loadPCSheets() {this._client.get<PCSheet[]>(environment.ApiUrl + '/Character/GetPCByUser', {
-      headers:
-      {
-        Authorization: 'Bearer ' + localStorage.getItem('token')
-      }
-    })
+  loadPCSheets() {this._client.get<PCSheet[]>(environment.ApiUrl + '/Character/GetPCByUser')
       .subscribe({
         next: data => {
           this.pcSheets.set(data);

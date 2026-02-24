@@ -13,14 +13,8 @@ export class JobService {
 
   _client = inject(HttpClient)
 
-  Jobsheet = signal<JobSheet[] | null>(null);
-
   loadJobSheet() {
     return this._client.get<JobSheet[]>(environment.ApiUrl + '/Character/GetAllJob')
-    .pipe(tap(data => {
-        this.Jobsheet.set(data);
-
-        console.log(this.Jobsheet());
-      }));
+   
   }
 }

@@ -9,12 +9,6 @@ export class CharacterApiService {
 
   getPCResolved(idPc: number) {
     return this._client.get<PCSheetResolved>(
-      `${environment.ApiUrl}/Character/GetPCResolved/${idPc}`,
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        }
-      }
-    );
+      `${environment.ApiUrl}/Character/GetPCResolved/${idPc}`);
   }
 }

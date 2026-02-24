@@ -1,1 +1,5 @@
-<p>chatbox works!</p>
+<div class="chatbox-container">
+  @for (line of logs(); track $index) {
+    <p>{{ line }}</p>
+  }
+</div>
